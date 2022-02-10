@@ -1,0 +1,57 @@
+<div class="row">
+
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="row" *ngIf="showMsg">
+                        <div class="col-xs-12">
+                            <p class="alert alert-success">
+                                <strong>product Added Successfully!</strong>
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Edit Category</h4>
+
+                        <form [formGroup]="editCategoryFormGroup">
+
+                            <div class="form-group">
+                                <label for="category_name"> Choose Main Category</label>
+                               
+                                <select class="form-control" formControlName="Category_id" (change)="OnChangemaincategory($event)" [ngClass]="{ 'is-invalid': submitted && addCategoriesFormGroup.controls.category_id.errors}">
+                                    <option *ngFor="let maincategory of maincategories" [value]="maincategory.id" value="" >{{maincategory.category_name}}</option>
+                                                   
+                                  </select>
+                                
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subcategory_name"> Choose Sub category</label>
+                             
+                                <select class="form-control" formControlName="parent_id" [ngClass]="{ 'is-invalid': submitted && addCategoriesFormGroup.controls.parent_id.errors}">
+                                        <option *ngFor="let subcategory of subcategories" [value]="subcategory.id" value="">{{subcategory.category_name}}</option>
+                                                       
+                                      </select>
+                                
+                            </div>
+                            <div class="form-group">
+                                <label for="product">Product</label>
+                              
+                                <!-- <input type="text" class="form-control" id="pincode" placeholder="Pincode"> -->
+                                <input class="form-control" formControlName="product_name" type="text" placeholder="Enter product name" [ngClass]="{ 'is-invalid': submitted && addCategoriesFormGroup.controls.pincode.errors}">
+                                
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success mr-2" (click)="submitproducts()">Submit</button>
+                                <button class="btn btn-light" (click)="onCancelClick()">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>

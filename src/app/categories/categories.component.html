@@ -1,0 +1,100 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">List Categories</h4>
+            <!-- <p class="card-description">
+          Add class
+          <code>.table-bordered</code>
+        </p>  -->
+
+            <button class="btn btn-success"  (click)="CategoriesClick()" style="position:absolute; right:20px; top:10px;">Add products</button>
+
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sl.NO</th>
+                            <th>Main Category</th>
+                            <th>Sub Category</th>
+                            <th>product</th>
+                            <th hidden>id</th>
+                            <th >Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let Category of ListCategories; let i = index">
+                            <td class="center">{{i+1}}</td>
+                            <td class="center">{{Category.category_name}}</td>
+                            <td class="center">{{Category.subcategory_name}}</td>
+                           <td class="center">{{Category.product_name}}</td>
+                            <td hidden class="center">{{Category.id}}</td>
+                            <td hidden class="center">{{Category.parent_id}}</td>
+                           <td><button class="btn"><i class="fa fa-edit" (click)="EditCategoriesClick(Category)"></i></button></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+            <!-- <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+
+                            <th>
+                                Title
+                            </th>
+                            <th>
+                                Description
+                            </th>
+                            <th>
+                                Published date
+                            </th>
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Hamsadhwani
+                            </td>
+                            <td>
+                                Magazine of Sevasram
+                            </td>
+
+                            <td>
+                                01/01/2020
+                            </td>
+                            <td>
+                                <button class="btn"><i class="fa fa-edit" (click)="EditBooksClick()"></i></button>
+                                <a href="#"><i class="fa fa-trash" alt="Delete" title="Delete"></i></a>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                Hamsadhwani1
+                            </td>
+                            <td>
+                                Magazine of Sevasram
+                            </td>
+
+                            <td>
+                                01/01/2020
+                            </td>
+                            <td>
+                                <a href="#"><i class="fa fa-edit" alt="Edit" title="Edit"></i></a>
+                                <a href="#"><i class="fa fa-trash" alt="Delete" title="Delete"></i></a>
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div> -->
+        </div>
+    </div>
+</div>
