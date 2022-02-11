@@ -10,7 +10,7 @@ import { EditCategoriesComponent } from './categories/edit-categories/edit-categ
 
 const routes: Routes = [
 
-
+  { path: '', redirectTo: '/categories', pathMatch: 'full' },
 {
   path: '',
  
